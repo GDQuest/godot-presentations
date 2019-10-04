@@ -5,7 +5,7 @@ extends Control
 export(String, MULTILINE) var text: = "" setget set_text
 export var center: = false setget set_center
 
-onready var _text: = $Text
+onready var _text: = $FrameContent/Margin/Text
 var _text_processed: = ""
 
 
@@ -32,7 +32,7 @@ func update_text() -> void:
 		_text_processed = center_text(text)
 	else:
 		_text_processed = text
-	$Text.bbcode_text = _text_processed
+	_text.bbcode_text = _text_processed
 
 
 func center_text(string: String) -> String:

@@ -3,8 +3,6 @@
 [ext_resource path="res://src/Slide/Slide.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "SETUP"
 length = 0.01
@@ -85,7 +83,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Slide" type="VBoxContainer"]
+[node name="Slide" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1.0

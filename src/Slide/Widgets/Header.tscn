@@ -1,33 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Slide/Widgets/Header.gd" type="Script" id=3]
 [ext_resource path="res://assets/theme/fonts/title_montserrat.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/slides/frame-title.svg" type="Texture" id=5]
-[ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=6]
 
-[node name="Header" type="CenterContainer" groups=[
+[node name="Header" type="TextureRect" groups=[
 "translate",
 ]]
-anchor_right = 1.0
-margin_top = -0.540344
-margin_bottom = 376.46
-rect_min_size = Vector2( 1920, 210 )
-size_flags_horizontal = 3
-theme = ExtResource( 6 )
+anchor_left = 0.196875
+anchor_right = 0.803125
+anchor_bottom = 0.144444
+texture = ExtResource( 5 )
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
-title = "Title"
 
-[node name="Background" type="TextureRect" parent="."]
-margin_left = 378.0
-margin_top = 110.0
-margin_right = 1542.0
-margin_bottom = 266.0
-texture = ExtResource( 5 )
-
-[node name="Title" type="Label" parent="Background"]
+[node name="Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
