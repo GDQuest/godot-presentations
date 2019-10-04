@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://src/Shaders/drop_shadow.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/radius = 0.35
+shader_param/offset = Vector2( 0, -2.63 )
+shader_param/color = null

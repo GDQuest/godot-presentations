@@ -4,9 +4,8 @@
 [ext_resource path="res://assets/theme/fonts/arabic/NotoSansArabicUI-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/theme/fonts/montserrat/montserrat-black.ttf" type="DynamicFontData" id=3]
 
-
 [resource]
-size = 88
+size = 66
 use_filter = true
 extra_spacing_bottom = -14
 font_data = ExtResource( 3 )

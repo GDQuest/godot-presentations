@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=2]
+[ext_resource path="res://src/Slide/Widgets/Footer.gd" type="Script" id=3]
+
+[node name="Footer" type="CenterContainer" groups=[
+"translate",
+]]
+show_behind_parent = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -140.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text = "Footer text"
+
+[node name="Text" type="Label" parent="."]
+margin_left = 159.0
+margin_top = 30.0
+margin_right = 1759.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 1600, 80 )
+mouse_filter = 0
+size_flags_vertical = 1
+text = "Footer text"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

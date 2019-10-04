@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 307.99967 41.362363"
+   height="156.33018"
+   width="1164.0933">
+  <defs
+     id="defs2">
+    <linearGradient
+       y2="1258.672"
+       x2="-1213.168"
+       y1="1296.8481"
+       x1="-1213.5586"
+       gradientTransform="translate(1424.3664,-1175.9259)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3249"
+       xlink:href="#linearGradient3526" />
+    <linearGradient
+       id="linearGradient3526">
+      <stop
+         id="stop3522"
+         offset="0"
+         style="stop-color:#3923ac;stop-opacity:1" />
+      <stop
+         id="stop3524"
+         offset="1"
+         style="stop-color:#741cd1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-78.833488,-79.654941)"
+     id="layer1">
+    <rect
+       transform="matrix(0.9998324,0.01830789,-0.01733722,0.9998497,0,0)"
+       y="78.08033"
+       x="86.648277"
+       height="35.952667"
+       width="295.77951"
+       id="rect3226"
+       style="opacity:0.388102;vector-effect:none;fill:#3a23ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:url(#linearGradient3249);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3228"
+       width="307.64795"
+       height="35.952938"
+       x="77.970612"
+       y="84.736855"
+       transform="rotate(-0.58621326)" />
+  </g>
+</svg>

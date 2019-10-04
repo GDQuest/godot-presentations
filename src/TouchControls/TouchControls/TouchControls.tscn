@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/TouchControls/TouchControls/TouchButtonRight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/TouchControls/TouchControls/TouchControls.gd" type="Script" id=2]
+[ext_resource path="res://src/TouchControls/TouchControls/TouchButtonLeft.tscn" type="PackedScene" id=3]
+
+[node name="TouchControls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchButtonLeft" parent="." instance=ExtResource( 3 )]
+rect_min_size = Vector2( 0, 0 )
+focus_mode = 0
+
+[node name="TouchButtonRight" parent="." instance=ExtResource( 1 )]
+rect_min_size = Vector2( 0, 0 )
+focus_mode = 0

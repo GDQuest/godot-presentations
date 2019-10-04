@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "InputEvent",
 "class": "InputEventSwipe",
 "language": "GDScript",
-"path": "res://src/touch_controls/InputEventSwipe.gd"
+"path": "res://src/TouchControls/SwipeDetector/InputEventSwipe.gd"
 } ]
 _global_script_class_icons={
 "InputEventSwipe": ""
@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Godot Presentation"
 config/description="Create beautiful interactive presentations in Godot"
-run/main_scene="res://src/presentation/Presentation.tscn"
+run/main_scene="res://src/Presentation/Presentation.tscn"
 config/icon="res://icon.png"
 config/version="2.0.0"
 
