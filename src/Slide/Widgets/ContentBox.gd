@@ -2,10 +2,13 @@ tool
 extends Control
 
 
+onready var rich_text_label: = $Margin/Column/Text
+onready var label_subtitle: = $Margin/Column/Subtitle
+
+export var subtitle: = "" setget set_subtitle
 export(String, MULTILINE) var text: = "" setget set_text
 export var center: = false setget set_center
 
-onready var _text: = $FrameContent/Margin/Text
 var _text_processed: = ""
 
 
@@ -15,14 +18,22 @@ func _ready() -> void:
 
 func set_text(string: String) -> void:
 	text = string
-	if not _text:
+	if not rich_text_label:
 		return
 	update_text()
 
 
+func set_subtitle(string: String) -> void:
+	subtitle = string
+	if not label_subtitle:
+		return
+	label_subtitle.text = subtitle
+	label_subtitle.visible = subtitle != ""
+
+
 func set_center(value: bool) -> void:
 	center = value
-	if not _text:
+	if not rich_text_label:
 		return
 	update_text()
 
@@ -32,7 +43,7 @@ func update_text() -> void:
 		_text_processed = center_text(text)
 	else:
 		_text_processed = text
-	_text.bbcode_text = _text_processed
+	rich_text_label.bbcode_text = _text_processed
 
 
 func center_text(string: String) -> String:
