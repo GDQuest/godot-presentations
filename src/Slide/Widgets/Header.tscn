@@ -15,6 +15,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+title = "Slide Title"
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
