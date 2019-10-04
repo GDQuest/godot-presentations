@@ -2,7 +2,7 @@ tool
 extends Control
 
 
-onready var title_node: = $Title
+onready var title_node: = $Header/Title
 
 export var title: = "" setget set_title
 export var font_override: Resource
