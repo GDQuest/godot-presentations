@@ -25,7 +25,12 @@ func _ready() -> void:
 			continue
 		slide.hide()
 		slide_nodes.append(slide)
-		remove_child(slide)
+	
+	if Engine.editor_hint:
+		set_process_unhandled_input(false)
+	else:
+		for slide in slide_nodes:
+			remove_child(slide)
 
 
 func _get_configuration_warning() -> String:
