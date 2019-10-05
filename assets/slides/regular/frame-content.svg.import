@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame-footer.svg-b4199f11815fd7cd424afb6830bdab2c.stex"
+path="res://.import/frame-content.svg-f3c885f9cb05fb0d9875da67b29e4f62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/slides/frame-footer.svg"
-dest_files=[ "res://.import/frame-footer.svg-b4199f11815fd7cd424afb6830bdab2c.stex" ]
+source_file="res://assets/slides/regular/frame-content.svg"
+dest_files=[ "res://.import/frame-content.svg-f3c885f9cb05fb0d9875da67b29e4f62.stex" ]
 
 [params]
 
