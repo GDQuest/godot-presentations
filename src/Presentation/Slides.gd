@@ -123,17 +123,18 @@ func _display(slide_index : int) -> void:
 	var previous_slide = slide_current
 	slide_current = slide_nodes[slide_index]
 
-	if not skip_animation and previous_slide:
-		previous_slide.play('Disappear', animation_speed)
-		yield(previous_slide, "animation_finished")
+	if previous_slide:
+		previous_slide.play('Disappear', animation_speed, skip_animation)
+		if not skip_animation:
+			yield(previous_slide, "animation_finished")
 
 	add_child(slide_current)
 	if _use_translations:
 		update_translations()
 	slide_current.visible = true
 
+	slide_current.play('Appear', animation_speed, skip_animation)
 	if not skip_animation:
-		slide_current.play('Appear', animation_speed)
 		yield(slide_current, "animation_finished")
 
 	if previous_slide:
