@@ -2,9 +2,9 @@
 
 [ext_resource path="res://src/Presentation/Presentation.gd" type="Script" id=1]
 [ext_resource path="res://src/Presentation/Slides.gd" type="Script" id=2]
-[ext_resource path="res://src/TouchControls/SwipeDetector/SwipeDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/TouchControls/TouchControls/TouchControls.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=4]
-[ext_resource path="res://src/TouchControls/TouchControls/TouchControls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/TouchControls/SwipeDetector/SwipeDetector.tscn" type="PackedScene" id=5]
 
 [node name="Presentation" type="Node"]
 script = ExtResource( 1 )
@@ -18,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SwipeDetector" parent="." instance=ExtResource( 3 )]
+[node name="SwipeDetector" parent="." instance=ExtResource( 5 )]
 
-[node name="TouchControls" parent="." instance=ExtResource( 5 )]
+[node name="TouchControls" parent="." instance=ExtResource( 3 )]
 [connection signal="slide_change_requested" from="TouchControls" to="." method="_on_TouchControls_slide_change_requested"]

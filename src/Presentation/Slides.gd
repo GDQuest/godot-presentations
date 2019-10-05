@@ -14,6 +14,8 @@ var index_active: = 0 setget set_index_active
 var slide_current
 var slide_nodes: = []
 
+onready var _use_translations: bool = owner.use_translations
+
 
 func _ready() -> void:
 	for slide in get_children():
@@ -61,7 +63,11 @@ func initialize() -> void:
 		return
 	slide_current = slide_nodes[0]
 	add_child(slide_current)
-	slide_current.show()
+	if _use_translations:
+		update_translations()
+	if not skip_animation:
+		slide_current.visible = true
+		yield(slide_current.play('Appear'), "completed")
 
 
 func set_index_active(value : int) -> void:
@@ -116,16 +122,21 @@ func save_as_png(output_folder: String) -> void:
 func _display(slide_index : int) -> void:
 	set_process_input(false)
 	var previous_slide = slide_current
-	var new_slide = slide_nodes[slide_index]
-	add_child(new_slide)
-	new_slide.show()
-	update_translations()
+	slide_current = slide_nodes[slide_index]
+
 
 	if not skip_animation:
-		var animation: = "fade_in"
-		yield(new_slide.play(animation), "completed")
+		yield(previous_slide.play('Disappear'), "completed")
+#		previous_slide.play('Disappear')
+#		yield(previous_slide.anim_player, "animation_finished")
 
-	previous_slide.hide()
+	add_child(slide_current)
+	if _use_translations:
+		update_translations()
+	slide_current.visible = true
+
+	if not skip_animation:
+		yield(slide_current.play('Appear'), "completed")
+
 	remove_child(previous_slide)
-	slide_current = new_slide
 	set_process_input(true)

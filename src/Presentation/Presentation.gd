@@ -5,6 +5,8 @@ signal language_changed()
 
 onready var slides: = $Slides
 
+export var use_translations: = false
+
 export(String, 'en', 'ja', 'fr', 'es', 'pt_BR', 'de', 'id', 'it', 'zh', 'uk_UA', 'ko', 'sk', 'pl') var language_main: = 'en' setget set_language_main
 export(String, 'en', 'ja', 'fr', 'es', 'pt_BR', 'de', 'id', 'it', 'zh', 'uk_UA', 'ko', 'sk', 'pl') var language_second: = 'ja'
 
@@ -15,7 +17,8 @@ func _ready() -> void:
 #	save_as_csv(get_translatable_strings()) # Use this to save the presentation as CSV
 #	return
 #	slides.save_as_png("res://out")
-	set_language_active(language_main)
+	if use_translations:
+		set_language_active(language_main)
 	slides.initialize()
 
 
@@ -23,8 +26,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed('toggle_fullscreen'):
 		OS.window_fullscreen = not OS.window_fullscreen
 		get_tree().set_input_as_handled()
-		return
-	if event.is_action_pressed('change_language') and language_main != language_second:
+	
+	if (use_translations 
+		and event.is_action_pressed('change_language')
+		and language_main != language_second):
 		if TranslationServer.get_locale() == language_main:
 			set_language_active(language_second)
 		else:
