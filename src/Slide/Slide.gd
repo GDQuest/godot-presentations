@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	emit_signal("animation_finished")
+	set_process_unhandled_input(false)
 
 
 func _unhandled_input(event: InputEvent) -> void:
