@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "InputEventSwipe",
 "language": "GDScript",
 "path": "res://src/TouchControls/SwipeDetector/InputEventSwipe.gd"
+}, {
+"base": "Control",
+"class": "Slide",
+"language": "GDScript",
+"path": "res://src/Slide/Slide.gd"
 } ]
 _global_script_class_icons={
-"InputEventSwipe": ""
+"InputEventSwipe": "",
+"Slide": ""
 }
 
 [application]

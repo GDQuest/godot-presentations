@@ -1,7 +1,7 @@
 tool
 extends Node
 """
-Container for presentation Slide Nodes.
+Container for presentation Slide nodes.
 Controls the currently displayed Slide.
 """
 
@@ -13,6 +13,19 @@ var index_active: = 0 setget set_index_active
 
 var slide_current
 var slide_nodes: = []
+
+
+func _ready() -> void:
+	for slide in get_children():
+		if not slide is Slide:
+			continue
+		slide.hide()
+		slide_nodes.append(slide)
+		remove_child(slide)
+
+
+func _get_configuration_warning() -> String:
+	return "%s needs Slide nodes as its children to work" % name if not slide_nodes else ""
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,10 +57,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func initialize() -> void:
-	for slide in get_children():
-		slide.hide()
-		slide_nodes.append(slide)
-		remove_child(slide)
 	if not slide_nodes:
 		return
 	slide_current = slide_nodes[0]
@@ -57,30 +66,11 @@ func initialize() -> void:
 
 func set_index_active(value : int) -> void:
 	var index_previous: = index_active
-	index_active = clamp(value, 0, slide_nodes.size() - 1)
+	index_active = clamp(value, 0, max(slide_nodes.size() - 1, 0))
 	if index_active == index_previous:
 		set_process_input(true)
 	else:
 		_display(index_active)
-
-
-func _display(slide_index : int) -> void:
-	set_process_input(false)
-	var previous_slide = slide_current
-	var new_slide = slide_nodes[slide_index]
-	add_child(new_slide)
-	new_slide.show()
-	update_translations()
-
-	if not skip_animation:
-		var animation: = "fade_in"
-		yield(new_slide.play(animation), "completed")
-
-	previous_slide.hide()
-	remove_child(previous_slide)
-	slide_current = new_slide
-
-	set_process_input(true)
 
 
 func update_translations() -> void:
@@ -121,3 +111,21 @@ func save_as_png(output_folder: String) -> void:
 	get_viewport().set_clear_mode(Viewport.CLEAR_MODE_ALWAYS)
 	get_tree().paused = false
 	skip_animation = false
+
+
+func _display(slide_index : int) -> void:
+	set_process_input(false)
+	var previous_slide = slide_current
+	var new_slide = slide_nodes[slide_index]
+	add_child(new_slide)
+	new_slide.show()
+	update_translations()
+
+	if not skip_animation:
+		var animation: = "fade_in"
+		yield(new_slide.play(animation), "completed")
+
+	previous_slide.hide()
+	remove_child(previous_slide)
+	slide_current = new_slide
+	set_process_input(true)
