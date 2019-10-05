@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow_left.png-71406bc82f83db97a30e85de5a2a066f.stex"
+path="res://.import/arrow.svg-19f320189a6b75c2a5807f1d072d9eea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/TouchControls/TouchControls/arrow_left.png"
-dest_files=[ "res://.import/arrow_left.png-71406bc82f83db97a30e85de5a2a066f.stex" ]
+source_file="res://src/TouchControls/TouchControls/arrow.svg"
+dest_files=[ "res://.import/arrow.svg-19f320189a6b75c2a5807f1d072d9eea.stex" ]
 
 [params]
 
