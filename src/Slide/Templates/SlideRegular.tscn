@@ -1,16 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/Slide/Widgets/Picture.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Slide/Widgets/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/slides/frame-footer.svg" type="Texture" id=2]
 [ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=3]
-[ext_resource path="res://src/Slide/Widgets/Header.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Slide/Widgets/Background.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Slide/Layout/Row.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Slide/Widgets/ContentBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Slide/Layout/Row.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Slide/Widgets/ContentBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Slide/Widgets/Picture.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Slide/Widgets/Header.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Slide/Animations/AnimationPlayer.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Appear"
+length = 0.766666
 step = 0.0333333
 tracks/0/type = "animation"
 tracks/0/path = NodePath("Header/Background/AnimationPlayer")
@@ -19,8 +20,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"clips": PoolStringArray( "Invisible", "Appear" ),
-"times": PoolRealArray( 0, 0.0333333 )
+"clips": PoolStringArray( "Invisible", "Appear", "Visible" ),
+"times": PoolRealArray( 0, 0.0333333, 0.733333 )
 }
 tracks/1/type = "animation"
 tracks/1/path = NodePath("Content/Row/AnimationPlayer")
@@ -29,8 +30,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": PoolStringArray( "Invisible", "Appear" ),
-"times": PoolRealArray( 0, 0.133333 )
+"clips": PoolStringArray( "Invisible", "Appear", "Visible" ),
+"times": PoolRealArray( 0, 0.133333, 0.733333 )
 }
 tracks/2/type = "animation"
 tracks/2/path = NodePath("Footer/Background/AnimationPlayer")
@@ -39,8 +40,43 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"clips": PoolStringArray( "Invisible", "Appear" ),
-"times": PoolRealArray( 0, 0.233333 )
+"clips": PoolStringArray( "Invisible", "Appear", "Visible" ),
+"times": PoolRealArray( 0, 0.233333, 0.733333 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Disappear"
+length = 0.733333
+step = 0.0333333
+tracks/0/type = "animation"
+tracks/0/path = NodePath("Header/Background/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "Visible", "Disappear", "Invisible" ),
+"times": PoolRealArray( 0, 0.0333333, 0.7 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Content/Row/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "Visible", "Disappear", "Invisible" ),
+"times": PoolRealArray( 0, 0.133333, 0.699999 )
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Footer/Background/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Visible", "Disappear", "Invisible" ),
+"times": PoolRealArray( 0, 0.233333, 0.699999 )
 }
 
 [node name="SlideRegular" type="Control"]
@@ -53,14 +89,15 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Appear = SubResource( 1 )
+anims/Disappear = SubResource( 2 )
 
-[node name="Background" parent="." instance=ExtResource( 5 )]
+[node name="Background" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1921.0
 margin_bottom = 1080.0
 
-[node name="Header" parent="." instance=ExtResource( 4 )]
+[node name="Header" parent="." instance=ExtResource( 7 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -582.0
@@ -81,7 +118,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Row" parent="Content" instance=ExtResource( 6 )]
+[node name="Row" parent="Content" instance=ExtResource( 4 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -284.0
@@ -89,13 +126,13 @@ margin_bottom = 284.0
 custom_constants/separation = 32
 alignment = 1
 
-[node name="ContentBox" parent="Content/Row" instance=ExtResource( 7 )]
+[node name="ContentBox" parent="Content/Row" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 814.0
 margin_bottom = 568.0
 
-[node name="Picture" parent="Content/Row" instance=ExtResource( 1 )]
+[node name="Picture" parent="Content/Row" instance=ExtResource( 6 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
