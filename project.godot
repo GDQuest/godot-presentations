@@ -32,10 +32,6 @@ run/main_scene="res://src/Presentation/Presentation.tscn"
 config/icon="res://assets/icon.png"
 config/version="2.0.0"
 
-[autoload]
-
-GlobalConstants="*res://content/demos/attacks/global-constants.gd"
-
 [display]
 
 window/size/width=1920

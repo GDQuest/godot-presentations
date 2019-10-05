@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Slide/Widgets/Background.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/slides/frame-footer.svg" type="Texture" id=2]
+[ext_resource path="res://assets/slides/regular/frame-footer.svg" type="Texture" id=2]
 [ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=3]
 [ext_resource path="res://src/Slide/Layout/Row.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Slide/Widgets/ContentBox.tscn" type="PackedScene" id=5]
@@ -106,9 +106,6 @@ margin_left = -582.0
 margin_top = 90.0
 margin_right = 582.0
 margin_bottom = 246.0
-
-[node name="Title" parent="Header/Background" index="0"]
-text = ""
 
 [node name="Content" type="Control" parent="."]
 anchor_left = 0.5

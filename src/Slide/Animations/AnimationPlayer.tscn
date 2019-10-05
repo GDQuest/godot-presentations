@@ -46,7 +46,7 @@ tracks/2/keys = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer"]
-autoplay = "Visible"
+autoplay = "Invisible"
 anims/Appear = ExtResource( 2 )
 anims/Disappear = ExtResource( 1 )
 anims/Invisible = SubResource( 1 )
