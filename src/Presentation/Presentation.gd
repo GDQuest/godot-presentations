@@ -50,10 +50,6 @@ func set_language_active(locale: String) -> void:
 	slides.update_translations()
 
 
-func _on_TouchControls_slide_change_requested(direction: int) -> void:
-	slides.index_active += direction
-
-
 """
 Returns a dictionary with a list of { translatable_string_uid: string }
 and the version of the project in which the data was generated
