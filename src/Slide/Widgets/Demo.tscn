@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
-
 script/source = "extends Control
 
 export(String, FILE, \"*.tscn, *.scn\") var demo_path: = \"\"
@@ -24,22 +23,13 @@ func _on_LegacySlide_shown() -> void:
 func _on_LegacySlide_hidden() -> void:
 	unload()
 "
-_sections_unfolded = [ "Resource" ]
 
 [node name="Demo" type="Control"]
-
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = SubResource( 1 )
-_sections_unfolded = [ "Size Flags" ]
-demo_path = ""
-
-
+__meta__ = {
+"_edit_use_anchors_": false
+}
