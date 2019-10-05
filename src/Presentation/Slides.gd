@@ -1,5 +1,5 @@
 tool
-extends Node
+extends Control
 """
 Container for presentation Slide nodes.
 Controls the currently displayed Slide.
@@ -9,9 +9,11 @@ Controls the currently displayed Slide.
 enum Directions {PREVIOUS = -1, CURRENT = 0, NEXT = 1}
 
 export var skip_animation: = false
+export var animation_speed: = 1.0
+
 var index_active: = 0 setget set_index_active
 
-var slide_current
+var slide_current: Slide
 var slide_nodes: = []
 
 onready var _use_translations: bool = owner.use_translations
@@ -55,27 +57,19 @@ func _unhandled_input(event: InputEvent) -> void:
 				self.index_active += 1
 			BUTTON_RIGHT:
 				self.index_active -= 1
-	get_tree().set_input_as_handled()
+	accept_event()
 
 
 func initialize() -> void:
 	if not slide_nodes:
 		return
-	slide_current = slide_nodes[0]
-	add_child(slide_current)
-	if _use_translations:
-		update_translations()
-	if not skip_animation:
-		slide_current.visible = true
-		yield(slide_current.play('Appear'), "completed")
+	_display(0)
 
 
 func set_index_active(value : int) -> void:
 	var index_previous: = index_active
 	index_active = clamp(value, 0, max(slide_nodes.size() - 1, 0))
-	if index_active == index_previous:
-		set_process_input(true)
-	else:
+	if index_active != index_previous:
 		_display(index_active)
 
 
@@ -120,15 +114,13 @@ func save_as_png(output_folder: String) -> void:
 
 
 func _display(slide_index : int) -> void:
-	set_process_input(false)
+	set_process_unhandled_input(false)
 	var previous_slide = slide_current
 	slide_current = slide_nodes[slide_index]
 
-
-	if not skip_animation:
-		yield(previous_slide.play('Disappear'), "completed")
-#		previous_slide.play('Disappear')
-#		yield(previous_slide.anim_player, "animation_finished")
+	if not skip_animation and previous_slide:
+		previous_slide.play('Disappear', animation_speed)
+		yield(previous_slide, "animation_finished")
 
 	add_child(slide_current)
 	if _use_translations:
@@ -136,7 +128,9 @@ func _display(slide_index : int) -> void:
 	slide_current.visible = true
 
 	if not skip_animation:
-		yield(slide_current.play('Appear'), "completed")
+		slide_current.play('Appear', animation_speed)
+		yield(slide_current, "animation_finished")
 
-	remove_child(previous_slide)
-	set_process_input(true)
+	if previous_slide:
+		remove_child(previous_slide)
+	set_process_unhandled_input(true)
