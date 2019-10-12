@@ -32,6 +32,7 @@ func set_title(string: String) -> void:
 	if not title_node:
 		return
 	title_node.text = string
+	visible = string != ""
 
 
 func translate() -> void:

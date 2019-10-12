@@ -44,6 +44,7 @@ func update_text() -> void:
 	else:
 		_text_processed = text
 	rich_text_label.bbcode_text = _text_processed
+	visible = text != ""
 
 
 func center_text(string: String) -> String:

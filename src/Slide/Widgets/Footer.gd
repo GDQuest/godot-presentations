@@ -4,7 +4,7 @@ extends Control
 
 export(String, MULTILINE) var text: = "" setget set_text
 
-onready var label: Label = $Text
+onready var label: Label = $Background/Label
 
 
 func set_text(string: String) -> void:
