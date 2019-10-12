@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Slide/Templates/SlideRegular.tscn" type="PackedScene" id=1]
+
+[node name="AnotherSlide" instance=ExtResource( 1 )]
+
+[node name="Header" parent="." index="2"]
+title = "Slide 2"
+
+[node name="Background" parent="Header" index="0"]
+visible = true
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="Title" parent="Header/Background" index="0"]
+text = "Slide 2"
+
+[node name="Row" parent="Content" index="0"]
+visible = true
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="ContentBox" parent="Content/Row" index="0"]
+subtitle = "Lalala"
+text = "I don't really know what to put in there, but hey...
+
+Let's try something"
+
+[node name="Background" parent="Footer" index="0"]
+visible = true
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="Label" parent="Footer/Background" index="0"]
+text = "Footer text"
+
+[editable path="Header"]
