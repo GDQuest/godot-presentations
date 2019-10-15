@@ -1,7 +1,9 @@
 [gd_resource type="DynamicFont" load_steps=3 format=2]
 
-[ext_resource path="res://assets/theme/fonts/CJK/NotoSansCJKjp-Medium.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/theme/fonts/arabic/NotoSansArabicUI-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/theme/fonts/noto/NotoSansCJKjp-Medium.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/theme/fonts/noto/NotoSansArabicUI-ExtraBold.ttf" type="DynamicFontData" id=2]
+
+
 
 [resource]
 size = 92
