@@ -12,9 +12,9 @@ margin_top = -222.5
 margin_right = 395.0
 margin_bottom = 222.5
 size_flags_horizontal = 3
-size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 texture = ExtResource( 1 )
+expand = true
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false

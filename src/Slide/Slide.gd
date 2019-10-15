@@ -1,3 +1,4 @@
+tool
 extends Control
 class_name Slide
 
@@ -5,6 +6,11 @@ class_name Slide
 signal animation_finished
 
 onready var anim_player: AnimationPlayer = $AnimationPlayer
+onready var header_hero: = $HeaderHero
+
+
+export(String, MULTILINE) var text: = "" setget set_text
+export var capitalize: = true setget set_capitalize
 
 
 func _ready() -> void:
@@ -33,6 +39,20 @@ func play(anim_name: String, speed: = 1.0, skip_animation=false) -> void:
 
 func is_playing() -> bool:
 	return anim_player.is_playing()
+
+
+func set_text(string: String) -> void:
+	text = string
+	if not header_hero:
+		return
+	header_hero.text = text
+
+
+func set_capitalize(value: bool) -> void:
+	capitalize = value
+	if not header_hero:
+		return
+	header_hero.capitalize = capitalize
 
 
 func _jump_to_animation_end() -> void:

@@ -1,13 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/theme/fonts/subtitle_montserrat.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/theme/presentation.theme" type="Theme" id=2]
-[ext_resource path="res://src/Slide/Layout/Column.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/slides/regular/frame-content.svg" type="Texture" id=4]
 [ext_resource path="res://src/Slide/Widgets/ContentBox.gd" type="Script" id=5]
-
-
-
 
 [node name="ContentBox" type="TextureRect" groups=[
 "translate",
@@ -35,22 +31,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Column" parent="Margin" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Column" type="VBoxContainer" parent="Margin"]
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 782.0
 margin_bottom = 536.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 24
 
 [node name="Subtitle" type="Label" parent="Margin/Column"]
 margin_right = 750.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 1 )
 text = "Subtitle"
+autowrap = true
 
 [node name="Text" type="RichTextLabel" parent="Margin/Column"]
-margin_top = 54.0
+margin_top = 74.0
 margin_right = 750.0
 margin_bottom = 504.0
 size_flags_vertical = 3

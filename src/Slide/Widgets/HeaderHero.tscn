@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/theme/fonts/title_montserrat.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/Slide/Animations/AnimationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Slide/Widgets/HeaderHero.gd" type="Script" id=3]
 [ext_resource path="res://assets/slides/hero/frame-title.svg" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -57,16 +58,15 @@ margin_top = -91.0
 margin_right = 514.0
 margin_bottom = 91.0
 mouse_filter = 1
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+text = "Title"
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 40.0
-margin_right = 1068.0
+margin_right = 1028.0
 margin_bottom = 182.0
 texture = ExtResource( 4 )
 __meta__ = {
@@ -78,7 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
-text = "Hero Title"
+text = "Title"
 align = 1
 valign = 1
 clip_text = true

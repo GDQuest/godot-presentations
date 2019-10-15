@@ -63,6 +63,7 @@ tracks/1/keys = {
 [node name="SlideRegular" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 3 )
 script = ExtResource( 9 )
 __meta__ = {
@@ -78,14 +79,20 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1921.0
 margin_bottom = 1080.0
+mouse_filter = 2
 
 [node name="Header" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -582.0
-margin_top = 90.0
+margin_top = 99.0
 margin_right = 582.0
-margin_bottom = 246.0
+margin_bottom = 255.0
+mouse_filter = 2
+font_override = null
+
+[node name="Background" parent="Header" index="0"]
+mouse_filter = 2
 
 [node name="Content" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -93,10 +100,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -820.0
-margin_top = -270.0
+margin_top = -265.0
 margin_right = 820.0
-margin_bottom = 449.0
-alignment = 1
+margin_bottom = 454.0
+rect_clip_content = true
+mouse_filter = 2
+custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,9 +113,9 @@ __meta__ = {
 [node name="Row" parent="Content" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 75.0
 margin_right = 1640.0
-margin_bottom = 643.0
+margin_bottom = 568.0
+mouse_filter = 2
 custom_constants/separation = 32
 alignment = 1
 
@@ -115,8 +124,10 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 814.0
 margin_bottom = 568.0
+mouse_filter = 2
 subtitle = "Test"
 text = "Test"
+center = false
 
 [node name="Picture" parent="Content/Row" instance=ExtResource( 5 )]
 anchor_left = 0.0
@@ -127,16 +138,19 @@ margin_left = 846.0
 margin_top = 0.0
 margin_right = 1640.0
 margin_bottom = 568.0
+mouse_filter = 2
+expand = false
 
 [node name="AnimationPlayer" parent="Content/Row" instance=ExtResource( 8 )]
 
 [node name="Footer" parent="Content" instance=ExtResource( 7 )]
-visible = false
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 583.0
+margin_top = 584.0
 margin_right = 1640.0
-margin_bottom = 707.0
+margin_bottom = 708.0
+mouse_filter = 2
+text = ""
 
 [editable path="Header"]
