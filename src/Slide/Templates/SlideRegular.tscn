@@ -34,6 +34,16 @@ tracks/1/keys = {
 "clips": PoolStringArray( "Invisible", "Appear", "Visible" ),
 "times": PoolRealArray( 0, 0.133333, 0.733333 )
 }
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Content/Footer/Background/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Invisible", "Appear", "Visible" ),
+"times": PoolRealArray( 0, 0.233333, 0.733333 )
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Disappear"
@@ -58,6 +68,16 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "clips": PoolStringArray( "Visible", "Disappear", "Invisible" ),
 "times": PoolRealArray( 0, 0.133333, 0.699999 )
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Content/Footer/Background/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Visible", "Disappear", "Invisible" ),
+"times": PoolRealArray( 0, 0.233333, 0.7 )
 }
 
 [node name="SlideRegular" type="Control"]
@@ -89,9 +109,10 @@ margin_top = 99.0
 margin_right = 582.0
 margin_bottom = 255.0
 mouse_filter = 2
-font_override = null
 
 [node name="Background" parent="Header" index="0"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 mouse_filter = 2
 
 [node name="Content" type="VBoxContainer" parent="."]
@@ -111,6 +132,8 @@ __meta__ = {
 }
 
 [node name="Row" parent="Content" instance=ExtResource( 1 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1640.0
@@ -127,7 +150,6 @@ margin_bottom = 568.0
 mouse_filter = 2
 subtitle = "Test"
 text = "Test"
-center = false
 
 [node name="Picture" parent="Content/Row" instance=ExtResource( 5 )]
 anchor_left = 0.0
@@ -144,13 +166,22 @@ expand = false
 [node name="AnimationPlayer" parent="Content/Row" instance=ExtResource( 8 )]
 
 [node name="Footer" parent="Content" instance=ExtResource( 7 )]
+visible = false
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 305.0
 margin_top = 584.0
-margin_right = 1640.0
+margin_right = 1335.0
 margin_bottom = 708.0
+rect_min_size = Vector2( 1030, 124 )
 mouse_filter = 2
-text = ""
+size_flags_horizontal = 4
+
+[node name="Background" parent="Content/Footer" index="0"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 
 [editable path="Header"]
+
+[editable path="Content/Footer"]

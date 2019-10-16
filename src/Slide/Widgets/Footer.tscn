@@ -54,6 +54,7 @@ anchor_bottom = 1.0
 margin_top = -200.0
 margin_bottom = -76.0
 rect_min_size = Vector2( 0, 124 )
+size_flags_horizontal = 3
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,6 +63,7 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
 texture = ExtResource( 1 )
 stretch_mode = 4
 __meta__ = {
@@ -71,7 +73,6 @@ __meta__ = {
 [node name="Label" type="Label" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Footer placeholder text"
 align = 1
 valign = 1
 __meta__ = {

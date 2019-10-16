@@ -7,6 +7,10 @@ export(String, MULTILINE) var text: = "" setget set_text
 onready var label: Label = $Background/Label
 
 
+func _ready() -> void:
+	self.text = text
+
+
 func set_text(string: String) -> void:
 	text = string
 	visible = text != ""
